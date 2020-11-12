@@ -21,7 +21,7 @@ public function renderDefault(): array
         ];
 
     }
-public function index(): Response{
+public function index(): Response {
     $books = $this->getDoctrine()->getRepository(Books::class)
         ->findAll();
         
