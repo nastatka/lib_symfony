@@ -14,14 +14,14 @@ class BooksController extends Controller {
 /**
  * @Route("/library/books", name="index")
  */
-public function renderDefault():array
+public function renderDefault(): array
     {
         return [
             'title' => ''
         ];
 
     }
-public function index():Response{
+public function index(): Response{
     $books = $this->getDoctrine()->getRepository(Books::class)
         ->findAll();
         
@@ -37,7 +37,7 @@ public function index():Response{
  * @return RedirectResponse|Response
  */
 
-public function add(Request $request):Response {
+public function add(Request $request): Response {
     $em = $this->getDoctrine()->getManager();
     $book = new Books;
     $form = $this->createForm(BookType::class, $book);
@@ -60,7 +60,7 @@ public function add(Request $request):Response {
  * @return RedirectResponse|Response
  */
 
-public function edit(int $id, Request $request):Response {
+public function edit(int $id, Request $request): Response {
     $em = $this->getDoctrine()->getManager();
     $book = $this->getDoctrine()->getRepository(Books::class)
         ->find($id);
