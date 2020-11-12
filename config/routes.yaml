@@ -1,3 +1,15 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+index: 
+    path: /library/books 
+    controller: App\Controller\BooksController::index 
+
+add: 
+    path: /library/books/add 
+    controller: App\Controller\BooksController::add 
+
+edit: 
+    path: /library/books/edit{id}
+    controller: App\Controller\BooksController::edit
