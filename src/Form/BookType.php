@@ -11,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class BookType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options):array
     {
         $builder
             ->add('bookName', TextType::class, array(
@@ -29,7 +29,7 @@ class BookType extends AbstractType
         ;
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver):array
     {
         $resolver->setDefaults([
             'data_class' => Books::class,
